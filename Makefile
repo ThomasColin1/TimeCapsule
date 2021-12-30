@@ -1,6 +1,10 @@
-TimeCapsule : TimeCapsule.java
+TimeCapsule.class : TimeCapsule.java
     javac -encoding UTF8 TimeCapsule.java
-JFramePrinc : JFramePrinc.java
+JFramePrinc.class : JFramePrinc.java
     javac -encoding UTF8 JFramePrinc.java
-JPanelChoix : JPanelChoix.java
+JPanelEcrire.class : JPanelEcrire.java
+	javac -encoding UTF8 JPanelEcrire.java
+JPanelLire.class : JPanelLire.java
+	javac -encoding UTF8 JPanelLire.java
+JPanelChoix.class : JPanelChoix.java
 	javac -encoding UTF8 JPanelChoix.java

@@ -6,7 +6,7 @@ import java.time.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
-public class JPanelChoix extends JPanel implements ActionListener{
+public class JPanelEcrire extends JPanel implements ActionListener{
 
     JCheckBox bMinuit;
     JTextArea tTexte;
@@ -15,7 +15,7 @@ public class JPanelChoix extends JPanel implements ActionListener{
     LocalDate choixDate;
     JButton bOK;
 
-    JPanelChoix(int largeurFrame, int longueurFrame){
+    JPanelEcrire(int largeurFrame, int longueurFrame){
         System.out.println(tomorrow);
         setLayout(null);
         setBounds(largeurFrame/20, longueurFrame/20,largeurFrame*18/20,longueurFrame*18/20);
@@ -58,6 +58,7 @@ public class JPanelChoix extends JPanel implements ActionListener{
             }catch(IOException i){
                 System.out.println("ERREUR");
             }
+            this.setVisible(false);
         }
     }
     public void Ecrire(String date, String texte) throws IOException{
