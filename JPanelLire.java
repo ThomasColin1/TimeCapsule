@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 
 public class JPanelLire extends JPanel implements ActionListener{
 
+    JLabel lTitre;
     JTextArea tTexte;
     LocalDate today = LocalDate.now();
     JButton bOK;
@@ -17,6 +18,7 @@ public class JPanelLire extends JPanel implements ActionListener{
         setBounds(largeurFrame/20, longueurFrame/20,largeurFrame*18/20,longueurFrame*18/20);
         setBackground(Color.red);
         setVisible(false);
+        setBackground(new Color(28,35,51));
 
         String texte = Lire(today.toString());
 
@@ -26,11 +28,20 @@ public class JPanelLire extends JPanel implements ActionListener{
         bOK = new JButton("Quitter");
         bOK.setBounds(largeur/2-100,longueur-30,200,20);
         this.add(bOK);
+        bOK.setVisible(false);
+
+        lTitre = new JLabel(today.toString(), SwingConstants.CENTER);
+        lTitre.setBounds(20,10,largeur-60, 30);
+        lTitre.setOpaque(false);
+        lTitre.setForeground(new Color(200,200,200));
 
         tTexte = new JTextArea(texte);
         tTexte.setBounds(20,40,largeur-40,longueur-120);
         tTexte.setEditable(false);
+        tTexte.setBackground(new Color(28,35,51));
+        tTexte.setForeground(new Color(211,211,211));
         this.add(tTexte);
+        this.add(lTitre);
 
         bOK.addActionListener(this);
 
@@ -73,9 +84,13 @@ public class JPanelLire extends JPanel implements ActionListener{
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            s="Vous n'avez pas écrit de notes pour cette journée !";
         }
         return(s);
+    }
+
+    public void changerTexte(String txt){
+        this.tTexte.setText(Lire(txt.substring(0,txt.indexOf('.')).trim()));
     }
 
 }

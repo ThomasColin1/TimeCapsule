@@ -16,11 +16,13 @@ public class JPanelEcrire extends JPanel implements ActionListener{
     JButton bOK;
 
     JPanelEcrire(int largeurFrame, int longueurFrame){
-        System.out.println(tomorrow);
+        // System.out.println(tomorrow);
         setLayout(null);
         setBounds(largeurFrame/20, longueurFrame/20,largeurFrame*18/20,longueurFrame*18/20);
         setBackground(Color.red);
         setVisible(false);
+        
+        setBackground(new Color(23,30,46));
 
         int largeur = this.getWidth();
         int longueur = this.getHeight();
@@ -35,6 +37,8 @@ public class JPanelEcrire extends JPanel implements ActionListener{
 
         tTexte = new JTextArea();
         tTexte.setBounds(20,40,largeur-40,longueur-120);
+        tTexte.setBackground(new Color(23,30,46));
+        tTexte.setForeground(new Color(211,211,211));
         this.add(tTexte);
 
         bOK.addActionListener(this);
